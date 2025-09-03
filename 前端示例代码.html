@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>医疗系统API测试页面</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #fafafa;
+        }
+        
+        .section h2 {
+            color: #34495e;
+            margin-top: 0;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 12px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 12px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        
+        .response {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 15px;
+            white-space: pre-wrap;
+            font-family: monospace;
+            font-size: 12px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .server-info {
+            background-color: #d1ecf1;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            border-left: 4px solid #bee5eb;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏥 医疗系统API测试页面</h1>
+        
+        <div class="server-info">
+            <h3>📡 服务器信息</h3>
+            <p><strong>地址:</strong> 8.140.225.6:55000</p>
+            <p><strong>协议:</strong> TCP Socket + JSON</p>
+            <p><strong>状态:</strong> <span id="serverStatus">未连接</span></p>
+        </div>
+        
+        <div class="grid">
+            <!-- 用户登录 -->
+            <div class="section">
+                <h2>🔐 用户登录</h2>
+                <div class="form-group">
+                    <label>用户名:</label>
+                    <input type="text" id="loginUsername" value="13800138000" placeholder="手机号或工号">
+                </div>
+                <div class="form-group">
+                    <label>密码:</label>
+                    <input type="password" id="loginPassword" value="hash_patient1" placeholder="密码">
+                </div>
+                <button onclick="testLogin()">登录</button>
+                <div id="loginResponse" class="response" style="display:none;"></div>
+            </div>
+            
+            <!-- 查询医生信息 -->
+            <div class="section">
+                <h2>👨‍⚕️ 查询医生信息</h2>
+                <div class="form-group">
+                    <label>医生姓名:</label>
+                    <input type="text" id="doctorName" value="王医生" placeholder="医生姓名">
+                </div>
+                <button onclick="queryDoctor()">查询医生</button>
+                <div id="doctorResponse" class="response" style="display:none;"></div>
+            </div>
+            
+            <!-- 创建预约 -->
+            <div class="section">
+                <h2>📅 创建预约</h2>
+                <div class="form-group">
+                    <label>患者手机号:</label>
+                    <input type="text" id="patientPhone" value="13800138000" placeholder="患者手机号">
+                </div>
+                <div class="form-group">
+                    <label>医生姓名:</label>
+                    <input type="text" id="appointmentDoctor" value="王医生" placeholder="医生姓名">
+                </div>
+                <div class="form-group">
+                    <label>预约时间:</label>
+                    <input type="datetime-local" id="appointmentTime" value="2024-03-15T10:00">
+                </div>
+                <div class="form-group">
+                    <label>是否已付费:</label>
+                    <select id="feePaid">
+                        <option value="1">已付费</option>
+                        <option value="0">未付费</option>
+                    </select>
+                </div>
+                <button onclick="createAppointment()">创建预约</button>
+                <div id="appointmentResponse" class="response" style="display:none;"></div>
+            </div>
+            
+            <!-- 查询预约 -->
+            <div class="section">
+                <h2>🔍 查询预约</h2>
+                <div class="form-group">
+                    <label>查询方式:</label>
+                    <select id="queryType" onchange="toggleQueryFields()">
+                        <option value="phone">按患者手机号</option>
+                        <option value="doctor">按医生姓名</option>
+                        <option value="date">按预约日期</option>
+                        <option value="all">查询所有</option>
+                    </select>
+                </div>
+                <div class="form-group" id="queryPhoneGroup">
+                    <label>患者手机号:</label>
+                    <input type="text" id="queryPhone" value="13800138000" placeholder="患者手机号">
+                </div>
+                <div class="form-group" id="queryDoctorGroup" style="display:none;">
+                    <label>医生姓名:</label>
+                    <input type="text" id="queryDoctor" value="王医生" placeholder="医生姓名">
+                </div>
+                <div class="form-group" id="queryDateGroup" style="display:none;">
+                    <label>预约日期:</label>
+                    <input type="date" id="queryDate" value="2024-03-15">
+                </div>
+                <button onclick="queryAppointments()">查询预约</button>
+                <div id="queryResponse" class="response" style="display:none;"></div>
+            </div>
+            
+            <!-- SQL查询 -->
+            <div class="section">
+                <h2>🗄️ SQL查询</h2>
+                <div class="form-group">
+                    <label>SQL语句:</label>
+                    <textarea id="sqlQuery" rows="3" placeholder="SELECT COUNT(*) FROM users">SELECT COUNT(*) as total_users FROM users</textarea>
+                </div>
+                <button onclick="executeSql()">执行查询</button>
+                <button onclick="loadPresetQuery('users')">用户统计</button>
+                <button onclick="loadPresetQuery('appointments')">预约统计</button>
+                <button onclick="loadPresetQuery('doctors')">医生列表</button>
+                <div id="sqlResponse" class="response" style="display:none;"></div>
+            </div>
+            
+            <!-- 患者注册 -->
+            <div class="section">
+                <h2>📝 患者注册</h2>
+                <div class="form-group">
+                    <label>姓名:</label>
+                    <input type="text" id="patientName" placeholder="患者姓名">
+                </div>
+                <div class="form-group">
+                    <label>手机号:</label>
+                    <input type="text" id="patientPhoneReg" placeholder="手机号">
+                </div>
+                <div class="form-group">
+                    <label>密码:</label>
+                    <input type="password" id="patientPassword" placeholder="密码">
+                </div>
+                <div class="form-group">
+                    <label>出生日期:</label>
+                    <input type="date" id="patientBirthDate" value="1990-01-01">
+                </div>
+                <div class="form-group">
+                    <label>身份证号:</label>
+                    <input type="text" id="patientIdCard" placeholder="身份证号">
+                </div>
+                <div class="form-group">
+                    <label>邮箱:</label>
+                    <input type="email" id="patientEmail" placeholder="邮箱地址">
+                </div>
+                <button onclick="registerPatient()">注册患者</button>
+                <div id="registerResponse" class="response" style="display:none;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 模拟API客户端类
+        class MedicalAPIClient {
+            constructor(host = '8.140.225.6', port = 55000) {
+                this.host = host;
+                this.port = port;
+                this.baseUrl = `http://${host}:${port}`;
+            }
+
+            async sendRequest(data) {
+                try {
+                    // 注意: 由于浏览器的CORS限制，这里模拟API调用
+                    // 实际使用时需要配置代理或使用WebSocket
+                    
+                    console.log('发送请求:', data);
+                    
+                    // 模拟网络延迟
+                    await new Promise(resolve => setTimeout(resolve, 500));
+                    
+                    // 模拟响应数据
+                    return this.mockResponse(data);
+                    
+                } catch (error) {
+                    console.error('请求失败:', error);
+                    throw error;
+                }
+            }
+
+            mockResponse(data) {
+                // 模拟服务器响应
+                const response = {
+                    status: 'success',
+                    timestamp: new Date().toISOString(),
+                    result: null
+                };
+
+                if (data.login) {
+                    response.result = data.user_name === '13800138000' && data.password === 'hash_patient1' 
+                        ? 'verificationSuccess' : 'verificationFalse';
+                } else if (data.query_doctor_info) {
+                    response.result = {
+                        status: 'success',
+                        doctor_info: {
+                            doctor_id: 1,
+                            name: data.doctor_name,
+                            department: '内科',
+                            fee: 50.0,
+                            is_available: true
+                        }
+                    };
+                } else if (data.create_appointment) {
+                    response.result = {
+                        status: 'success',
+                        appointment_info: {
+                            appointment_id: Math.floor(Math.random() * 1000),
+                            queue_number: Math.floor(Math.random() * 10) + 1,
+                            status: 'pending'
+                        }
+                    };
+                } else if (data.query_appointments) {
+                    response.result = {
+                        status: 'success',
+                        appointments: [
+                            {
+                                appointment_id: 1,
+                                patient_name: '张三',
+                                doctor_name: '王医生',
+                                appointment_time: '2024-03-01 10:00:00',
+                                status: 'pending'
+                            }
+                        ]
+                    };
+                } else if (data.sql_query) {
+                    response.result = {
+                        columns: ['count'],
+                        data: [[Math.floor(Math.random() * 100)]]
+                    };
+                } else if (data.register_patient) {
+                    response.result = 'chenggongcharu';
+                } else {
+                    response.result = '操作成功';
+                }
+
+                return response;
+            }
+        }
+
+        const client = new MedicalAPIClient();
+
+        // 显示响应结果
+        function showResponse(elementId, response, isError = false) {
+            const element = document.getElementById(elementId);
+            element.style.display = 'block';
+            element.className = isError ? 'response error' : 'response success';
+            element.textContent = JSON.stringify(response, null, 2);
+        }
+
+        // 用户登录
+        async function testLogin() {
+            const username = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
+
+            try {
+                const response = await client.sendRequest({
+                    login: true,
+                    user_name: username,
+                    password: password
+                });
+                showResponse('loginResponse', response);
+            } catch (error) {
+                showResponse('loginResponse', { error: error.message }, true);
+            }
+        }
+
+        // 查询医生信息
+        async function queryDoctor() {
+            const doctorName = document.getElementById('doctorName').value;
+
+            try {
+                const response = await client.sendRequest({
+                    query_doctor_info: true,
+                    doctor_name: doctorName
+                });
+                showResponse('doctorResponse', response);
+            } catch (error) {
+                showResponse('doctorResponse', { error: error.message }, true);
+            }
+        }
+
+        // 创建预约
+        async function createAppointment() {
+            const patientPhone = document.getElementById('patientPhone').value;
+            const doctorName = document.getElementById('appointmentDoctor').value;
+            const appointmentTime = document.getElementById('appointmentTime').value.replace('T', ' ') + ':00';
+            const feePaid = parseInt(document.getElementById('feePaid').value);
+
+            try {
+                const response = await client.sendRequest({
+                    create_appointment: true,
+                    patient_phone: patientPhone,
+                    doctor_name: doctorName,
+                    appointment_time: appointmentTime,
+                    fee_paid: feePaid
+                });
+                showResponse('appointmentResponse', response);
+            } catch (error) {
+                showResponse('appointmentResponse', { error: error.message }, true);
+            }
+        }
+
+        // 查询预约
+        async function queryAppointments() {
+            const queryType = document.getElementById('queryType').value;
+            const requestData = { query_appointments: true };
+
+            switch (queryType) {
+                case 'phone':
+                    requestData.patient_phone = document.getElementById('queryPhone').value;
+                    break;
+                case 'doctor':
+                    requestData.doctor_name = document.getElementById('queryDoctor').value;
+                    break;
+                case 'date':
+                    requestData.appointment_date = document.getElementById('queryDate').value;
+                    break;
+            }
+
+            try {
+                const response = await client.sendRequest(requestData);
+                showResponse('queryResponse', response);
+            } catch (error) {
+                showResponse('queryResponse', { error: error.message }, true);
+            }
+        }
+
+        // 执行SQL查询
+        async function executeSql() {
+            const sqlQuery = document.getElementById('sqlQuery').value;
+
+            try {
+                const response = await client.sendRequest({
+                    sql_query: sqlQuery
+                });
+                showResponse('sqlResponse', response);
+            } catch (error) {
+                showResponse('sqlResponse', { error: error.message }, true);
+            }
+        }
+
+        // 加载预设查询
+        function loadPresetQuery(type) {
+            const queries = {
+                users: 'SELECT COUNT(*) as total_users FROM users',
+                appointments: 'SELECT status, COUNT(*) as count FROM appointments GROUP BY status',
+                doctors: 'SELECT name, department, fee FROM doctors WHERE is_available = 1'
+            };
+            document.getElementById('sqlQuery').value = queries[type];
+        }
+
+        // 患者注册
+        async function registerPatient() {
+            const name = document.getElementById('patientName').value;
+            const phone = document.getElementById('patientPhoneReg').value;
+            const password = document.getElementById('patientPassword').value;
+            const birthDate = document.getElementById('patientBirthDate').value;
+            const idCard = document.getElementById('patientIdCard').value;
+            const email = document.getElementById('patientEmail').value;
+
+            if (!name || !phone || !password) {
+                showResponse('registerResponse', { error: '请填写必填字段' }, true);
+                return;
+            }
+
+            try {
+                const response = await client.sendRequest({
+                    register_patient: true,
+                    name: name,
+                    password_hash: password, // 实际应用中需要哈希处理
+                    phone: phone,
+                    birth_date: birthDate,
+                    id_card: idCard,
+                    email: email
+                });
+                showResponse('registerResponse', response);
+            } catch (error) {
+                showResponse('registerResponse', { error: error.message }, true);
+            }
+        }
+
+        // 切换查询字段显示
+        function toggleQueryFields() {
+            const queryType = document.getElementById('queryType').value;
+            const phoneGroup = document.getElementById('queryPhoneGroup');
+            const doctorGroup = document.getElementById('queryDoctorGroup');
+            const dateGroup = document.getElementById('queryDateGroup');
+
+            phoneGroup.style.display = queryType === 'phone' ? 'block' : 'none';
+            doctorGroup.style.display = queryType === 'doctor' ? 'block' : 'none';
+            dateGroup.style.display = queryType === 'date' ? 'block' : 'none';
+        }
+
+        // 页面加载完成后的初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 模拟连接状态检查
+            setTimeout(() => {
+                document.getElementById('serverStatus').textContent = '已连接 (模拟)';
+                document.getElementById('serverStatus').style.color = 'green';
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

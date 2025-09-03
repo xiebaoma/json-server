@@ -1,0 +1,507 @@
+{
+  "info": {
+    "name": "医疗系统API集合",
+    "description": "医疗系统后端API接口测试集合\n服务器: 8.140.225.6:55000",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://8.140.225.6:55000",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "用户认证",
+      "item": [
+        {
+          "name": "用户登录",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"login\": true,\n  \"user_name\": \"13800138000\",\n  \"password\": \"hash_patient1\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api",
+              "host": ["{{baseUrl}}"],
+              "path": ["api"]
+            },
+            "description": "用户登录验证接口"
+          },
+          "response": [
+            {
+              "name": "登录成功",
+              "status": "OK",
+              "code": 200,
+              "header": [],
+              "body": "{\n  \"status\": \"success\",\n  \"timestamp\": \"2024-01-01T12:00:00.000Z\",\n  \"result\": \"verificationSuccess\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "患者注册",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"register_patient\": true,\n  \"name\": \"测试患者\",\n  \"password_hash\": \"test_hash_123\",\n  \"phone\": \"13900139999\",\n  \"birth_date\": \"1990-01-01\",\n  \"id_card\": \"110101199001019999\",\n  \"email\": \"test@example.com\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api",
+              "host": ["{{baseUrl}}"],
+              "path": ["api"]
+            },
+            "description": "患者注册接口"
+          }
+        },
+        {
+          "name": "医生注册",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"register_doctor\": true,\n  \"name\": \"测试医生\",\n  \"password_hash\": \"test_hash_456\",\n  \"employee_id\": \"DOC999\",\n  \"department\": \"测试科\",\n  \"photo_path\": \"/path/to/photo.jpg\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api",
+              "host": ["{{baseUrl}}"],
+              "path": ["api"]
+            },
+            "description": "医生注册接口"
+          }
+        },
+        {
+          "name": "重置密码",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"reset_password\": true,\n  \"username\": \"13800138000\",\n  \"new_password\": \"new_hash_password\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api",
+              "host": ["{{baseUrl}}"],
+              "path": ["api"]
+            },
+            "description": "重置用户密码"
+          }
+        }
+      ],
+      "description": "用户认证相关接口"
+    },
+    {
+      "name": "信息查询",
+      "item": [
+        {
+          "name": "查询医生信息",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query_doctor_info\": true,\n  \"doctor_name\": \"王医生\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api",
+              "host": ["{{baseUrl}}"],
+              "path": ["api"]
+            },
+            "description": "根据医生姓名查询医生详细信息"
+          }
+        },
+        {
+          "name": "查询患者信息",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query_patient_info\": true,\n  \"patient_name\": \"张三\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api",
+              "host": ["{{baseUrl}}"],
+              "path": ["api"]
+            },
+            "description": "根据患者姓名查询患者详细信息"
+          }
+        }
+      ],
+      "description": "信息查询相关接口"
+    },
+    {
+      "name": "预约管理",
+      "item": [
+        {
+          "name": "创建预约",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"create_appointment\": true,\n  \"patient_phone\": \"13800138000\",\n  \"doctor_name\": \"王医生\",\n  \"appointment_time\": \"2024-03-15 10:00:00\",\n  \"fee_paid\": 1\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api",
+              "host": ["{{baseUrl}}"],
+              "path": ["api"]
+            },
+            "description": "创建新的预约挂号"
+          }
+        },
+        {
+          "name": "查询预约-按患者",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query_appointments\": true,\n  \"patient_phone\": \"13800138000\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api",
+              "host": ["{{baseUrl}}"],
+              "path": ["api"]
+            },
+            "description": "根据患者手机号查询预约记录"
+          }
+        },
+        {
+          "name": "查询预约-按医生",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query_appointments\": true,\n  \"doctor_name\": \"王医生\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api",
+              "host": ["{{baseUrl}}"],
+              "path": ["api"]
+            },
+            "description": "根据医生姓名查询预约记录"
+          }
+        },
+        {
+          "name": "查询预约-按日期",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query_appointments\": true,\n  \"appointment_date\": \"2024-03-15\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api",
+              "host": ["{{baseUrl}}"],
+              "path": ["api"]
+            },
+            "description": "根据预约日期查询预约记录"
+          }
+        },
+        {
+          "name": "查询所有预约",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query_appointments\": true\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api",
+              "host": ["{{baseUrl}}"],
+              "path": ["api"]
+            },
+            "description": "查询所有预约记录(最近20条)"
+          }
+        },
+        {
+          "name": "取消预约",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cancel_appointment\": true,\n  \"appointment_id\": 1\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api",
+              "host": ["{{baseUrl}}"],
+              "path": ["api"]
+            },
+            "description": "取消指定的预约"
+          }
+        },
+        {
+          "name": "更新预约状态",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"update_appointment_status\": true,\n  \"appointment_id\": 1,\n  \"new_status\": \"completed\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api",
+              "host": ["{{baseUrl}}"],
+              "path": ["api"]
+            },
+            "description": "更新预约状态(pending/completed/cancelled)"
+          }
+        }
+      ],
+      "description": "预约管理相关接口"
+    },
+    {
+      "name": "信息更新",
+      "item": [
+        {
+          "name": "更新患者信息",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"reset_patient_information\": true,\n  \"old_phone\": \"13800138000\",\n  \"new_name\": \"张三三\",\n  \"new_phone\": \"13900139000\",\n  \"new_email\": \"zhangsan_new@example.com\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api",
+              "host": ["{{baseUrl}}"],
+              "path": ["api"]
+            },
+            "description": "更新患者个人信息"
+          }
+        },
+        {
+          "name": "更新医生信息",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"reset_doctor_information\": true,\n  \"old_employee_id\": \"DOC001\",\n  \"new_name\": \"王医师\",\n  \"new_department\": \"心内科\",\n  \"new_fee\": 80.0,\n  \"new_is_available\": true\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api",
+              "host": ["{{baseUrl}}"],
+              "path": ["api"]
+            },
+            "description": "更新医生个人信息"
+          }
+        }
+      ],
+      "description": "信息更新相关接口"
+    },
+    {
+      "name": "数据库操作",
+      "item": [
+        {
+          "name": "SQL查询-用户统计",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sql_query\": \"SELECT COUNT(*) as total_users FROM users\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api",
+              "host": ["{{baseUrl}}"],
+              "path": ["api"]
+            },
+            "description": "查询用户总数"
+          }
+        },
+        {
+          "name": "SQL查询-预约统计",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sql_query\": \"SELECT status, COUNT(*) as count FROM appointments GROUP BY status\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api",
+              "host": ["{{baseUrl}}"],
+              "path": ["api"]
+            },
+            "description": "按状态统计预约数量"
+          }
+        },
+        {
+          "name": "SQL查询-医生列表",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sql_query\": \"SELECT name, department, fee FROM doctors WHERE is_available = 1\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api",
+              "host": ["{{baseUrl}}"],
+              "path": ["api"]
+            },
+            "description": "查询可用医生列表"
+          }
+        },
+        {
+          "name": "通用数据插入",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"table_name\": \"students\",\n  \"name\": \"测试学生\",\n  \"age\": 20,\n  \"student_id\": 99999\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api",
+              "host": ["{{baseUrl}}"],
+              "path": ["api"]
+            },
+            "description": "向指定表插入数据"
+          }
+        }
+      ],
+      "description": "数据库操作相关接口"
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// 设置时间戳变量",
+          "pm.globals.set('timestamp', Date.now());"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// 通用响应检查",
+          "pm.test('响应状态码为200', function () {",
+          "    pm.response.to.have.status(200);",
+          "});",
+          "",
+          "pm.test('响应包含必要字段', function () {",
+          "    const jsonData = pm.response.json();",
+          "    pm.expect(jsonData).to.have.property('status');",
+          "    pm.expect(jsonData).to.have.property('timestamp');",
+          "});",
+          "",
+          "pm.test('响应时间小于2秒', function () {",
+          "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+          "});"
+        ]
+      }
+    }
+  ]
+}

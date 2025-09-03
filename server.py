@@ -1,16 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-整合的JSON数据库服务器（已重构为模块化结构）
-功能：
-1. 接收客户端连接和JSON数据
-2. 处理JSON并操作数据库
-3. 将处理结果以JSON格式返回给客户端
-
-注意：此文件已被重构为模块化结构，请使用 server.py 启动服务器
-新的模块化结构提供了更好的代码组织和维护性
-
-为了保持向后兼容性，此文件保留了原始的接口和主函数
+医疗系统服务器启动脚本
+提供命令行接口和服务管理功能
 """
 
 import sys
@@ -22,21 +14,7 @@ import time
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from core.medical_server import MedicalServer
-from utils.server_manager import ServerManager, daemonize
-
-# 为了保持向后兼容性，保留原始类名
-class JSONDatabaseServer(MedicalServer):
-    def __init__(self, host='0.0.0.0', port=55000, db_path='/medical/MedicalSystem.db', 
-                 log_file='/medical/server.log', pid_file='/medical/server.pid'):
-        # 调用父类构造函数，使用新的模块化结构
-        super().__init__(host, port, db_path, log_file, pid_file)
-
-
-# 保留原始的辅助函数以维持兼容性
-def get_server_pid(pid_file):
-    """获取服务器PID"""
-    server_manager = ServerManager(pid_file)
-    return server_manager.get_server_pid()
+from utils.server_manager import ServerManager
 
 
 def start_server(args):
@@ -50,14 +28,13 @@ def start_server(args):
         print(f"服务器已在运行 (PID: {existing_pid})")
         return False
     
-    print("启动JSON数据库服务器...")
+    print("启动医疗系统JSON数据库服务器...")
     
     if args.daemon:
         print("以守护进程模式启动...")
-        daemonize()
     
     # 创建服务器实例
-    server = JSONDatabaseServer(
+    server = MedicalServer(
         host=args.host, 
         port=args.port, 
         db_path=args.db_path,
@@ -119,12 +96,7 @@ def status_server(args):
 
 def main():
     """主函数"""
-    print("注意：此文件已被重构为模块化结构")
-    print("推荐使用 'python server.py' 启动服务器以获得更好的体验")
-    print("继续使用原始接口...")
-    print()
-    
-    parser = argparse.ArgumentParser(description='JSON数据库服务器')
+    parser = argparse.ArgumentParser(description='医疗系统JSON数据库服务器')
     parser.add_argument('action', choices=['start', 'stop', 'restart', 'status'], 
                        help='操作: start(启动), stop(停止), restart(重启), status(状态)')
     parser.add_argument('--host', default='0.0.0.0', help='监听地址 (默认: 0.0.0.0)')
