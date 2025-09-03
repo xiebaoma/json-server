@@ -1,0 +1,347 @@
+{
+  "server": "8.140.225.6:55000",
+  "test_time": "2025-09-03T18:03:50.362260",
+  "summary": {
+    "total_tests": 11,
+    "passed_tests": 10,
+    "failed_tests": 1,
+    "success_rate": "90.9%"
+  },
+  "detailed_results": [
+    {
+      "test_name": "服务器连接测试",
+      "timestamp": "2025-09-03T18:03:47.163933",
+      "success": true,
+      "response": {
+        "status": "success",
+        "timestamp": "2025-09-03T18:03:47.218413",
+        "result": "处理JSON数据时出错: table default_table has no column named test"
+      },
+      "error": null
+    },
+    {
+      "test_name": "用户登录 - 有效凭据",
+      "timestamp": "2025-09-03T18:03:47.326319",
+      "success": false,
+      "response": {
+        "status": "success",
+        "timestamp": "2025-09-03T18:03:47.386820",
+        "result": "verificationFalse"
+      },
+      "error": null
+    },
+    {
+      "test_name": "用户登录 - 无效凭据",
+      "timestamp": "2025-09-03T18:03:47.486277",
+      "success": true,
+      "response": {
+        "status": "success",
+        "timestamp": "2025-09-03T18:03:47.545205",
+        "result": "verificationFalse"
+      },
+      "error": null
+    },
+    {
+      "test_name": "患者注册",
+      "timestamp": "2025-09-03T18:03:47.654775",
+      "success": true,
+      "response": {
+        "status": "success",
+        "timestamp": "2025-09-03T18:03:47.710681",
+        "result": "chenggongcharu"
+      },
+      "error": null
+    },
+    {
+      "test_name": "医生信息查询",
+      "timestamp": "2025-09-03T18:03:47.835693",
+      "success": true,
+      "response": {
+        "status": "success",
+        "timestamp": "2025-09-03T18:03:47.893748",
+        "result": {
+          "status": "success",
+          "message": "查询成功",
+          "doctor_info": {
+            "doctor_id": 4,
+            "name": "王医生",
+            "employee_id": "DOC001",
+            "department": "内科",
+            "photo_path": null,
+            "max_patients": 30,
+            "fee": 50.0,
+            "work_schedule": "{\"monday\": \"9:00-17:00\", \"tuesday\": \"9:00-17:00\", \"wednesday\": \"9:00-17:00\", \"thursday\": \"9:00-17:00\", \"friday\": \"9:00-17:00\"}",
+            "is_available": true,
+            "username": "DOC001",
+            "role": "doctor",
+            "created_at": "2025-09-03 01:58:28"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "test_name": "预约创建",
+      "timestamp": "2025-09-03T18:03:48.034158",
+      "success": true,
+      "response": {
+        "status": "success",
+        "timestamp": "2025-09-03T18:03:48.090953",
+        "result": {
+          "status": "success",
+          "message": "预约创建成功",
+          "appointment_info": {
+            "appointment_id": 16,
+            "patient_phone": "13800138000",
+            "doctor_name": "王医生",
+            "appointment_time": "2024-03-15 10:00:00",
+            "queue_number": 7,
+            "status": "pending",
+            "fee_paid": true
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "test_name": "预约查询",
+      "timestamp": "2025-09-03T18:03:48.196557",
+      "success": true,
+      "response": {
+        "status": "success",
+        "timestamp": "2025-09-03T18:03:48.253788",
+        "result": {
+          "status": "success",
+          "message": "查询到 14 条预约记录",
+          "appointments": [
+            {
+              "appointment_id": 5,
+              "patient_name": "张三",
+              "patient_phone": "13800138000",
+              "doctor_name": "王医生",
+              "department": "内科",
+              "appointment_time": "2024-03-20 14:00:00",
+              "status": "pending",
+              "fee_paid": true,
+              "queue_number": 1,
+              "created_at": "2025-09-03 02:00:37"
+            },
+            {
+              "appointment_id": 6,
+              "patient_name": "张三",
+              "patient_phone": "13800138000",
+              "doctor_name": "王医生",
+              "department": "内科",
+              "appointment_time": "2024-03-20 14:00:00",
+              "status": "pending",
+              "fee_paid": true,
+              "queue_number": 2,
+              "created_at": "2025-09-03 02:10:52"
+            },
+            {
+              "appointment_id": 7,
+              "patient_name": "张三",
+              "patient_phone": "13800138000",
+              "doctor_name": "王医生",
+              "department": "内科",
+              "appointment_time": "2024-03-20 14:00:00",
+              "status": "pending",
+              "fee_paid": true,
+              "queue_number": 3,
+              "created_at": "2025-09-03 02:24:42"
+            },
+            {
+              "appointment_id": 8,
+              "patient_name": "张三",
+              "patient_phone": "13800138000",
+              "doctor_name": "王医生",
+              "department": "内科",
+              "appointment_time": "2024-03-20 14:00:00",
+              "status": "pending",
+              "fee_paid": true,
+              "queue_number": 4,
+              "created_at": "2025-09-03 02:25:23"
+            },
+            {
+              "appointment_id": 9,
+              "patient_name": "张三",
+              "patient_phone": "13800138000",
+              "doctor_name": "王医生",
+              "department": "内科",
+              "appointment_time": "2024-03-20 14:00:00",
+              "status": "pending",
+              "fee_paid": true,
+              "queue_number": 5,
+              "created_at": "2025-09-03 03:01:51"
+            },
+            {
+              "appointment_id": 10,
+              "patient_name": "张三",
+              "patient_phone": "13800138000",
+              "doctor_name": "王医生",
+              "department": "内科",
+              "appointment_time": "2024-03-20 14:00:00",
+              "status": "pending",
+              "fee_paid": true,
+              "queue_number": 6,
+              "created_at": "2025-09-03 03:50:48"
+            },
+            {
+              "appointment_id": 4,
+              "patient_name": "张三",
+              "patient_phone": "13800138000",
+              "doctor_name": "王医生",
+              "department": "内科",
+              "appointment_time": "2024-03-15 10:00:00",
+              "status": "pending",
+              "fee_paid": true,
+              "queue_number": 1,
+              "created_at": "2025-09-03 01:58:54"
+            },
+            {
+              "appointment_id": 11,
+              "patient_name": "张三",
+              "patient_phone": "13800138000",
+              "doctor_name": "王医生",
+              "department": "内科",
+              "appointment_time": "2024-03-15 10:00:00",
+              "status": "pending",
+              "fee_paid": true,
+              "queue_number": 2,
+              "created_at": "2025-09-03 03:50:58"
+            },
+            {
+              "appointment_id": 12,
+              "patient_name": "张三",
+              "patient_phone": "13800138000",
+              "doctor_name": "王医生",
+              "department": "内科",
+              "appointment_time": "2024-03-15 10:00:00",
+              "status": "pending",
+              "fee_paid": true,
+              "queue_number": 3,
+              "created_at": "2025-09-03 04:53:27"
+            },
+            {
+              "appointment_id": 13,
+              "patient_name": "张三",
+              "patient_phone": "13800138000",
+              "doctor_name": "王医生",
+              "department": "内科",
+              "appointment_time": "2024-03-15 10:00:00",
+              "status": "pending",
+              "fee_paid": true,
+              "queue_number": 4,
+              "created_at": "2025-09-03 04:53:52"
+            },
+            {
+              "appointment_id": 14,
+              "patient_name": "张三",
+              "patient_phone": "13800138000",
+              "doctor_name": "王医生",
+              "department": "内科",
+              "appointment_time": "2024-03-15 10:00:00",
+              "status": "pending",
+              "fee_paid": true,
+              "queue_number": 5,
+              "created_at": "2025-09-03 07:00:56"
+            },
+            {
+              "appointment_id": 15,
+              "patient_name": "张三",
+              "patient_phone": "13800138000",
+              "doctor_name": "王医生",
+              "department": "内科",
+              "appointment_time": "2024-03-15 10:00:00",
+              "status": "pending",
+              "fee_paid": true,
+              "queue_number": 6,
+              "created_at": "2025-09-03 10:02:41"
+            },
+            {
+              "appointment_id": 16,
+              "patient_name": "张三",
+              "patient_phone": "13800138000",
+              "doctor_name": "王医生",
+              "department": "内科",
+              "appointment_time": "2024-03-15 10:00:00",
+              "status": "pending",
+              "fee_paid": true,
+              "queue_number": 7,
+              "created_at": "2025-09-03 10:03:48"
+            },
+            {
+              "appointment_id": 1,
+              "patient_name": "张三",
+              "patient_phone": "13800138000",
+              "doctor_name": "王医生",
+              "department": "内科",
+              "appointment_time": "2024-02-01 09:00:00",
+              "status": "completed",
+              "fee_paid": true,
+              "queue_number": 1,
+              "created_at": "2025-09-03 01:58:28"
+            }
+          ]
+        }
+      },
+      "error": null
+    },
+    {
+      "test_name": "SQL查询",
+      "timestamp": "2025-09-03T18:03:48.354865",
+      "success": true,
+      "response": {
+        "status": "success",
+        "timestamp": "2025-09-03T18:03:48.412388",
+        "result": {
+          "columns": [
+            "user_count"
+          ],
+          "data": [
+            [
+              21
+            ]
+          ]
+        }
+      },
+      "error": null
+    },
+    {
+      "test_name": "错误处理 - 无效操作",
+      "timestamp": "2025-09-03T18:03:48.511305",
+      "success": true,
+      "response": {
+        "status": "success",
+        "timestamp": "2025-09-03T18:03:48.565763",
+        "result": "处理JSON数据时出错: table default_table has no column named invalid_operation"
+      },
+      "error": null
+    },
+    {
+      "test_name": "并发连接测试 (5/5)",
+      "timestamp": "2025-09-03T18:03:48.675606",
+      "success": true,
+      "response": {
+        "success_rate": "100.0%"
+      },
+      "error": null
+    },
+    {
+      "test_name": "性能测试",
+      "timestamp": "2025-09-03T18:03:50.359882",
+      "success": true,
+      "response": {
+        "total_requests": 10,
+        "successful_requests": 10,
+        "success_rate": "100.0%",
+        "total_time": "1.68s",
+        "avg_response_time": "168.4ms",
+        "min_response_time": "147.7ms",
+        "max_response_time": "215.7ms",
+        "requests_per_second": "5.9"
+      },
+      "error": null
+    }
+  ]
+}

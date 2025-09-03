@@ -103,17 +103,24 @@ class AuthService:
     def register_doctor(self, data: Dict[str, Any]) -> str:
         """注册医生"""
         try:
+            # 检查必填字段
             if 'name' not in data or 'password_hash' not in data or 'employee_id' not in data:
+                return "charuyichang"
+            
+            # 验证字段不为空
+            name = str(data['name']).strip()
+            password_hash = str(data['password_hash']).strip()
+            employee_id = str(data['employee_id']).strip()
+            
+            if not name or not password_hash or not employee_id:
                 return "charuyichang"
                 
             conn = sqlite3.connect(self.db_path)
             cursor = conn.cursor()
             
-            name = data['name']
-            password_hash = data['password_hash']
-            employee_id = data['employee_id']
-            department = data.get('department')
-            photo_path = data.get('photo_path')
+            # 获取可选字段，确保数据类型正确
+            department = str(data.get('department', '')).strip() if data.get('department') else None
+            photo_path = str(data.get('photo_path', '')).strip() if data.get('photo_path') else None
             
             # 检查工号是否已存在
             cursor.execute("SELECT COUNT(*) FROM users WHERE username = ?", (employee_id,))
@@ -126,9 +133,11 @@ class AuthService:
                           (employee_id, password_hash, 'doctor'))
             user_id = cursor.lastrowid  # 获取刚插入的user_id
             
-            # 再插入医生详细信息表
-            cursor.execute("INSERT INTO doctors (doctor_id, name, employee_id, department, photo_path, max_patients) VALUES (?, ?, ?, ?, ?, ?)",
-                          (user_id, name, employee_id, department, photo_path, 30))
+            # 再插入医生详细信息表，确保数据类型匹配
+            cursor.execute("""
+                INSERT INTO doctors (doctor_id, name, employee_id, department, photo_path, max_patients) 
+                VALUES (?, ?, ?, ?, ?, ?)
+            """, (int(user_id), name, employee_id, department, photo_path, 30))
             
             conn.commit()
             conn.close()

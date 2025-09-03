@@ -1,0 +1,206 @@
+{
+  "医生注册API示例": {
+    "服务器地址": "8.140.225.6:55000",
+    "接口说明": "医生注册功能的各种使用示例"
+  },
+  
+  "正常注册示例": {
+    "请求格式": {
+      "register_doctor": true,
+      "name": "张医生",
+      "password_hash": "hashed_password_here",
+      "employee_id": "DOC001",
+      "department": "内科",
+      "photo_path": "/photos/doctor_001.jpg"
+    },
+    "成功响应": {
+      "status": "success",
+      "timestamp": "2024-01-01T12:00:00.000Z",
+      "result": "chenggongcharu"
+    },
+    "说明": "所有必填字段都提供，photo_path为可选字段"
+  },
+  
+  "最小字段注册": {
+    "请求格式": {
+      "register_doctor": true,
+      "name": "李医生",
+      "password_hash": "hashed_password_here",
+      "employee_id": "DOC002"
+    },
+    "成功响应": {
+      "status": "success",
+      "timestamp": "2024-01-01T12:00:00.000Z",
+      "result": "chenggongcharu"
+    },
+    "说明": "只包含必填字段: name, password_hash, employee_id"
+  },
+  
+  "完整字段注册": {
+    "请求格式": {
+      "register_doctor": true,
+      "name": "王主任",
+      "password_hash": "secure_hash_value",
+      "employee_id": "DOC003",
+      "department": "心内科",
+      "photo_path": "/uploads/doctors/wang_director.jpg"
+    },
+    "成功响应": {
+      "status": "success",
+      "timestamp": "2024-01-01T12:00:00.000Z",
+      "result": "chenggongcharu"
+    },
+    "说明": "包含所有可用字段"
+  },
+  
+  "重复工号错误": {
+    "请求格式": {
+      "register_doctor": true,
+      "name": "重复医生",
+      "password_hash": "another_hash",
+      "employee_id": "DOC001",
+      "department": "外科"
+    },
+    "错误响应": {
+      "status": "success",
+      "timestamp": "2024-01-01T12:00:00.000Z",
+      "result": "gonghaoyicunzai"
+    },
+    "说明": "当工号已存在时返回此错误"
+  },
+  
+  "缺少必填字段错误": {
+    "请求格式": {
+      "register_doctor": true,
+      "password_hash": "hash_value",
+      "employee_id": "DOC004"
+    },
+    "错误响应": {
+      "status": "success",
+      "timestamp": "2024-01-01T12:00:00.000Z",
+      "result": "charuyichang"
+    },
+    "说明": "缺少name字段时返回注册异常"
+  },
+  
+  "空字段错误": {
+    "请求格式": {
+      "register_doctor": true,
+      "name": "",
+      "password_hash": "hash_value",
+      "employee_id": "DOC005",
+      "department": "儿科"
+    },
+    "错误响应": {
+      "status": "success",
+      "timestamp": "2024-01-01T12:00:00.000Z",
+      "result": "charuyichang"
+    },
+    "说明": "姓名为空时返回注册异常"
+  },
+  
+  "批量注册示例": [
+    {
+      "register_doctor": true,
+      "name": "内科医生1",
+      "password_hash": "hash1",
+      "employee_id": "DOC101",
+      "department": "内科"
+    },
+    {
+      "register_doctor": true,
+      "name": "外科医生1",
+      "password_hash": "hash2",
+      "employee_id": "DOC201",
+      "department": "外科"
+    },
+    {
+      "register_doctor": true,
+      "name": "儿科医生1",
+      "password_hash": "hash3",
+      "employee_id": "DOC301",
+      "department": "儿科"
+    }
+  ],
+  
+  "常见科室列表": [
+    "内科",
+    "外科",
+    "儿科",
+    "妇产科",
+    "眼科",
+    "耳鼻喉科",
+    "皮肤科",
+    "神经科",
+    "心内科",
+    "心外科",
+    "骨科",
+    "泌尿科",
+    "肿瘤科",
+    "急诊科",
+    "麻醉科",
+    "放射科",
+    "检验科",
+    "药剂科"
+  ],
+  
+  "字段说明": {
+    "register_doctor": {
+      "类型": "boolean",
+      "必填": true,
+      "说明": "标识这是医生注册请求，必须为true"
+    },
+    "name": {
+      "类型": "string",
+      "必填": true,
+      "说明": "医生姓名，不能为空"
+    },
+    "password_hash": {
+      "类型": "string",
+      "必填": true,
+      "说明": "密码的哈希值，建议使用SHA256"
+    },
+    "employee_id": {
+      "类型": "string",
+      "必填": true,
+      "说明": "医生工号，必须唯一，不能为空"
+    },
+    "department": {
+      "类型": "string",
+      "必填": false,
+      "说明": "所属科室，可选字段"
+    },
+    "photo_path": {
+      "类型": "string",
+      "必填": false,
+      "说明": "头像图片路径，可选字段"
+    }
+  },
+  
+  "返回状态码说明": {
+    "chenggongcharu": "注册成功",
+    "gonghaoyicunzai": "工号已存在",
+    "charuyichang": "注册异常（通常是必填字段缺失或为空）"
+  },
+  
+  "前端集成建议": {
+    "密码处理": "前端需要对密码进行SHA256哈希后再发送",
+    "工号验证": "建议前端对工号格式进行预验证",
+    "必填字段": "确保name、password_hash、employee_id三个字段不为空",
+    "错误处理": "根据result字段的值进行相应的错误提示",
+    "成功后操作": "注册成功后可以立即使用工号和密码进行登录测试"
+  },
+  
+  "测试用例": {
+    "预置医生账户": {
+      "username": "DOC001",
+      "password": "hash_doctor1",
+      "name": "王医生",
+      "department": "内科"
+    },
+    "测试命令": [
+      "python quick_doctor_test.py  # 快速测试",
+      "python test_doctor_registration.py  # 完整测试"
+    ]
+  }
+}

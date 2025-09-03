@@ -71,7 +71,7 @@ class RemoteMedicalServerTester:
         login_data = {
             "login": True,
             "user_name": "13800138000",
-            "password": "hash_patient1"
+            "password_hash": "hash_patient1"
         }
         
         try:
@@ -87,7 +87,7 @@ class RemoteMedicalServerTester:
         invalid_login_data = {
             "login": True,
             "user_name": "invalid_user",
-            "password": "wrong_password"
+            "password_hash": "wrong_password"
         }
         
         try:

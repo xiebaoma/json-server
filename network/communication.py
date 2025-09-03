@@ -229,6 +229,9 @@ class JSONProtocolClient:
             
             # 接收响应
             response = self.receive_response(client_socket)
+            
+            # 在关闭连接前稍等片刻，确保数据传输完成
+            time.sleep(0.1)
             client_socket.close()
             
             return response
