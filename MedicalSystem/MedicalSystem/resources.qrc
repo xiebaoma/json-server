@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/fonts">
+        <file>fonts/ZiKuTangHuangZiYuanKaiTi-TiYanBan-1.ttf</file>
+        <file>fonts/Regattia-Bold.otf</file>
+        <file>fonts/庞门正道粗书体.ttf</file>
+    </qresource>
+</RCC>

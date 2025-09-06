@@ -1,0 +1,1478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow_patient</class>
+ <widget class="QMainWindow" name="MainWindow_patient">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1109</width>
+    <height>691</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>1071</width>
+      <height>651</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>4</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QFrame" name="frame">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Shape::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+       <widget class="QFrame" name="frame_4">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>9</y>
+          <width>181</width>
+          <height>611</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QPushButton" name="home_btn">
+           <property name="text">
+            <string>主页</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="info_btn">
+           <property name="text">
+            <string>个人信息</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="regist_btn">
+           <property name="text">
+            <string>挂号信息</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="history_btn">
+           <property name="text">
+            <string>病历信息</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="advice_btn">
+           <property name="text">
+            <string>医嘱信息</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="presciption_btn">
+           <property name="text">
+            <string>处方信息</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="com_btn">
+           <property name="text">
+            <string>医患沟通</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="frame_3">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>4</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Shape::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+       <widget class="QStackedWidget" name="stackedWidget">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>0</y>
+          <width>811</width>
+          <height>611</height>
+         </rect>
+        </property>
+        <property name="currentIndex">
+         <number>5</number>
+        </property>
+        <widget class="QWidget" name="page_home">
+         <widget class="QLabel" name="label_home">
+          <property name="geometry">
+           <rect>
+            <x>118</x>
+            <y>138</y>
+            <width>561</width>
+            <height>181</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:36pt;&quot;&gt;用户您好&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="page_info">
+         <widget class="QScrollArea" name="scrollArea">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>9</y>
+            <width>801</width>
+            <height>1991</height>
+           </rect>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>782</width>
+             <height>2300</height>
+            </rect>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>2300</height>
+            </size>
+           </property>
+           <widget class="QLabel" name="label_info">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>10</y>
+              <width>141</width>
+              <height>51</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;个人信息&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+           <widget class="QTableWidget" name="tableWidget_info">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>60</y>
+              <width>771</width>
+              <height>421</height>
+             </rect>
+            </property>
+            <column>
+             <property name="text">
+              <string>姓名</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>性别</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>出生日期</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>身份证号</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>手机号</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>邮箱</string>
+             </property>
+            </column>
+           </widget>
+           <widget class="QFrame" name="frame_5">
+            <property name="geometry">
+             <rect>
+              <x>660</x>
+              <y>740</y>
+              <width>117</width>
+              <height>122</height>
+             </rect>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::Shape::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Shadow::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_2">
+             <item>
+              <widget class="QPushButton" name="pushButton_info_edit">
+               <property name="text">
+                <string>编辑</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_info_confirm">
+               <property name="text">
+                <string>确认</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_info_back">
+               <property name="text">
+                <string>返回</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QFrame" name="frame_6">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>490</y>
+              <width>111</width>
+              <height>361</height>
+             </rect>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::Shape::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Shadow::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_3">
+             <item>
+              <widget class="QLabel" name="label_pname">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;姓名&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_pgender">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;性别&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_pbirthdate">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;出生日期&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_pid">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;身份证号&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_pphone">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;手机号&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_pemail">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;邮箱&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QFrame" name="frame_7">
+            <property name="geometry">
+             <rect>
+              <x>130</x>
+              <y>480</y>
+              <width>421</width>
+              <height>391</height>
+             </rect>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::Shape::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Shadow::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_4">
+             <item>
+              <widget class="QLineEdit" name="lineEdit_pname">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_pgender"/>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_pbirthdate"/>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_pid"/>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_pphone"/>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_pemail"/>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="page_reg">
+         <widget class="QFrame" name="frame_8">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>0</y>
+            <width>791</width>
+            <height>561</height>
+           </rect>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::Shape::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Shadow::Raised</enum>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <item>
+            <widget class="QPushButton" name="pushButton_reg_appoint">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>预约挂号</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_reg_window">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>窗口挂号</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_reg_doctor">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>查看医生信息</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_reg_back">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>返回</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="page_reg_doctor">
+         <widget class="QScrollArea" name="scrollArea_2">
+          <property name="geometry">
+           <rect>
+            <x>-11</x>
+            <y>-1</y>
+            <width>821</width>
+            <height>611</height>
+           </rect>
+          </property>
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents_2">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>819</width>
+             <height>609</height>
+            </rect>
+           </property>
+           <widget class="QLabel" name="label_reg_doctor">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>0</y>
+              <width>121</width>
+              <height>61</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;医生信息&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+           <widget class="QFrame" name="frame_9">
+            <property name="geometry">
+             <rect>
+              <x>9</x>
+              <y>59</y>
+              <width>771</width>
+              <height>551</height>
+             </rect>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::Shape::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Shadow::Raised</enum>
+            </property>
+            <widget class="QLabel" name="label_daoctor_pic">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>0</y>
+               <width>141</width>
+               <height>181</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>照片</string>
+             </property>
+            </widget>
+            <widget class="QFrame" name="frame_10">
+             <property name="geometry">
+              <rect>
+               <x>170</x>
+               <y>20</y>
+               <width>241</width>
+               <height>161</height>
+              </rect>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::Shape::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Shadow::Raised</enum>
+             </property>
+             <widget class="QLabel" name="label_doctor_office">
+              <property name="geometry">
+               <rect>
+                <x>20</x>
+                <y>20</y>
+                <width>69</width>
+                <height>19</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string>科室</string>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_doctor_name">
+              <property name="geometry">
+               <rect>
+                <x>20</x>
+                <y>70</y>
+                <width>69</width>
+                <height>19</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string>姓名</string>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_doctor_office_2">
+              <property name="geometry">
+               <rect>
+                <x>140</x>
+                <y>20</y>
+                <width>69</width>
+                <height>19</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string>TextLabel</string>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_doctor_name_2">
+              <property name="geometry">
+               <rect>
+                <x>140</x>
+                <y>70</y>
+                <width>69</width>
+                <height>19</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string>TextLabel</string>
+              </property>
+             </widget>
+             <widget class="QPushButton" name="pushButton_docdetail">
+              <property name="geometry">
+               <rect>
+                <x>130</x>
+                <y>120</y>
+                <width>93</width>
+                <height>28</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string>详情信息</string>
+              </property>
+             </widget>
+            </widget>
+           </widget>
+           <widget class="QPushButton" name="pushButton_regdoctor_back">
+            <property name="geometry">
+             <rect>
+              <x>690</x>
+              <y>20</y>
+              <width>93</width>
+              <height>28</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>返回</string>
+            </property>
+           </widget>
+          </widget>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="page_reg_docdetail">
+         <widget class="QLabel" name="label_docdetail">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>191</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;医生详情信息&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QFrame" name="frame_11">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>60</y>
+            <width>791</width>
+            <height>541</height>
+           </rect>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::Shape::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Shadow::Raised</enum>
+          </property>
+          <widget class="QLabel" name="label_docdetail_pic">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>20</y>
+             <width>141</width>
+             <height>171</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>照片</string>
+           </property>
+          </widget>
+          <widget class="QFrame" name="frame_12">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>210</y>
+             <width>121</width>
+             <height>321</height>
+            </rect>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::Shape::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Shadow::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_6">
+            <item>
+             <widget class="QLabel" name="label_docdetail_office">
+              <property name="text">
+               <string>科室</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_docdetail_id">
+              <property name="text">
+               <string>工号</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_docdetail_name">
+              <property name="text">
+               <string>姓名</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_docdetail_worktime">
+              <property name="text">
+               <string>上班时间</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_docdetail_cost">
+              <property name="text">
+               <string>挂号费用</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_docdetail_maxpatient">
+              <property name="text">
+               <string>单日患者上限</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QFrame" name="frame_13">
+           <property name="geometry">
+            <rect>
+             <x>170</x>
+             <y>210</y>
+             <width>281</width>
+             <height>321</height>
+            </rect>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::Shape::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Shadow::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_7">
+            <item>
+             <widget class="QLabel" name="label_docdetail_office_2">
+              <property name="text">
+               <string>TextLabel</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_docdetail_id_2">
+              <property name="text">
+               <string>TextLabel</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_docdetail_name_2">
+              <property name="text">
+               <string>TextLabel</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_docdetail_worktime_2">
+              <property name="text">
+               <string>TextLabel</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_docdetail_cost_2">
+              <property name="text">
+               <string>TextLabel</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_docdetail_maxpatient_2">
+              <property name="text">
+               <string>TextLabel</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+         <widget class="QPushButton" name="pushButton_doctor_close">
+          <property name="geometry">
+           <rect>
+            <x>732</x>
+            <y>10</y>
+            <width>31</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>×</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="page_reg_window">
+         <widget class="QLabel" name="label_window">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>121</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;窗口挂号&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QTableWidget" name="tableWidget_window">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>60</y>
+            <width>791</width>
+            <height>401</height>
+           </rect>
+          </property>
+          <column>
+           <property name="text">
+            <string>科室</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>医生编号</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>工号</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>医生姓名</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>上班时间</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>挂号费用</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>单日患者上限</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>已预约人数</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>剩余预约人数</string>
+           </property>
+          </column>
+         </widget>
+         <widget class="QLabel" name="label_window_office">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>480</y>
+            <width>69</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>科室</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_window_dname">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>520</y>
+            <width>69</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>医生姓名</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="lineEdit_window_office">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>480</y>
+            <width>113</width>
+            <height>25</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="lineEdit_window_dname">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>520</y>
+            <width>113</width>
+            <height>25</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_window_confirm">
+          <property name="geometry">
+           <rect>
+            <x>580</x>
+            <y>550</y>
+            <width>93</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>确认挂号</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_window_back">
+          <property name="geometry">
+           <rect>
+            <x>710</x>
+            <y>550</y>
+            <width>93</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>返回</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_window_cost">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>560</y>
+            <width>69</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>挂号费用</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="lineEdit_window_cost">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>560</y>
+            <width>113</width>
+            <height>25</height>
+           </rect>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="page_reg_appoint">
+         <widget class="QLabel" name="label_reg_appoint">
+          <property name="geometry">
+           <rect>
+            <x>240</x>
+            <y>280</y>
+            <width>69</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>预约挂号</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="page_history">
+         <widget class="QLabel" name="label_history">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>131</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;病历信息&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QTableWidget" name="tableWidget_history">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>60</y>
+            <width>811</width>
+            <height>461</height>
+           </rect>
+          </property>
+          <column>
+           <property name="text">
+            <string>病历序号</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>病历建立日期</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>科室</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>主治医生</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>诊断结果</string>
+           </property>
+          </column>
+         </widget>
+         <widget class="QPushButton" name="pushButton_history_back">
+          <property name="geometry">
+           <rect>
+            <x>680</x>
+            <y>540</y>
+            <width>93</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>返回</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="page_advice">
+         <widget class="QLabel" name="label_advice">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>131</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;医嘱信息&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QTableWidget" name="tableWidget_advice">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>60</y>
+            <width>801</width>
+            <height>271</height>
+           </rect>
+          </property>
+          <column>
+           <property name="text">
+            <string>医嘱序号</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>日期</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>科室</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>主治医生</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>处方内容</string>
+           </property>
+          </column>
+         </widget>
+         <widget class="QLabel" name="label_prescription_content">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>370</y>
+            <width>81</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;处方内容&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="lineEdit_prescription_content">
+          <property name="geometry">
+           <rect>
+            <x>140</x>
+            <y>380</y>
+            <width>341</width>
+            <height>25</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_advicedetail">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>450</y>
+            <width>91</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;医嘱详情&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="lineEdit_advicedetail">
+          <property name="geometry">
+           <rect>
+            <x>140</x>
+            <y>460</y>
+            <width>341</width>
+            <height>151</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_advicedetail">
+          <property name="geometry">
+           <rect>
+            <x>682</x>
+            <y>457</y>
+            <width>111</width>
+            <height>61</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>查看详情信息</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_advice_back">
+          <property name="geometry">
+           <rect>
+            <x>682</x>
+            <y>540</y>
+            <width>111</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>返回</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="page_prescription">
+         <widget class="QLabel" name="label_prescription_info">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>20</y>
+            <width>131</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;处方信息&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QTableWidget" name="tableWidget_prescription">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>60</y>
+            <width>801</width>
+            <height>391</height>
+           </rect>
+          </property>
+          <column>
+           <property name="text">
+            <string>处方序号</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>日期</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>科室</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>主治医生</string>
+           </property>
+          </column>
+         </widget>
+         <widget class="QLabel" name="label_prescription_id">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>480</y>
+            <width>91</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;处方序号&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_pre_doctor">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>520</y>
+            <width>81</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;主治医生&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="lineEdit_prescription_id">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>480</y>
+            <width>113</width>
+            <height>25</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="lineEdit_prescription_doctor">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>530</y>
+            <width>113</width>
+            <height>25</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_predetail">
+          <property name="geometry">
+           <rect>
+            <x>280</x>
+            <y>480</y>
+            <width>91</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;处方详情&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="lineEdit_predetail">
+          <property name="geometry">
+           <rect>
+            <x>380</x>
+            <y>480</y>
+            <width>231</width>
+            <height>81</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_prescription_detail">
+          <property name="geometry">
+           <rect>
+            <x>680</x>
+            <y>490</y>
+            <width>93</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>查看详情</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_prescription_back">
+          <property name="geometry">
+           <rect>
+            <x>680</x>
+            <y>540</y>
+            <width>93</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>返回</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="page_com">
+         <widget class="QLabel" name="label_com">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>10</y>
+            <width>131</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;医患沟通&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QTableWidget" name="tableWidget_com">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>70</y>
+            <width>721</width>
+            <height>281</height>
+           </rect>
+          </property>
+          <column>
+           <property name="text">
+            <string>科室</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>工号</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>医生姓名</string>
+           </property>
+          </column>
+         </widget>
+         <widget class="QLabel" name="label_office">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>380</y>
+            <width>69</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;科室&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_dname">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>430</y>
+            <width>101</width>
+            <height>61</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;医生姓名&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="lineEdit_office">
+          <property name="geometry">
+           <rect>
+            <x>130</x>
+            <y>390</y>
+            <width>113</width>
+            <height>25</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="lineEdit_dname">
+          <property name="geometry">
+           <rect>
+            <x>130</x>
+            <y>450</y>
+            <width>113</width>
+            <height>25</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_dsuggest">
+          <property name="geometry">
+           <rect>
+            <x>300</x>
+            <y>380</y>
+            <width>81</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;医生建议&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="lineEdit_dsuggest">
+          <property name="geometry">
+           <rect>
+            <x>410</x>
+            <y>390</y>
+            <width>401</width>
+            <height>71</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_psuggest">
+          <property name="geometry">
+           <rect>
+            <x>300</x>
+            <y>470</y>
+            <width>91</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;患者建议&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="lineEdit_psuggest">
+          <property name="geometry">
+           <rect>
+            <x>410</x>
+            <y>470</y>
+            <width>401</width>
+            <height>91</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_send">
+          <property name="geometry">
+           <rect>
+            <x>550</x>
+            <y>570</y>
+            <width>93</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>发送</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_com_back">
+          <property name="geometry">
+           <rect>
+            <x>690</x>
+            <y>570</y>
+            <width>93</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>返回</string>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

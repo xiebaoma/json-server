@@ -1,0 +1,4 @@
+/Users/baoma.xie/Desktop/locallink/build/CMakeFiles/MyQtApp.dir
+/Users/baoma.xie/Desktop/locallink/build/CMakeFiles/QtJsonClient.dir
+/Users/baoma.xie/Desktop/locallink/build/CMakeFiles/edit_cache.dir
+/Users/baoma.xie/Desktop/locallink/build/CMakeFiles/rebuild_cache.dir

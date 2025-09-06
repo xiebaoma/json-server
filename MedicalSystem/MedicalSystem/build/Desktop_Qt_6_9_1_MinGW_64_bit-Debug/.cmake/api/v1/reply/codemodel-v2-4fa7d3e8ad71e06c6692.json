@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-d7334bc2b9e03c3b9473.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "MedicalSystem",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "MedicalSystem::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-MedicalSystem-Debug-4208b435ee262de44996.json",
+					"name" : "MedicalSystem",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "MedicalSystem_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-MedicalSystem_autogen-Debug-c56928ce4b7e85ba702a.json",
+					"name" : "MedicalSystem_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "MedicalSystem_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-MedicalSystem_autogen_timestamp_deps-Debug-9d8ae05cd4a66207224e.json",
+					"name" : "MedicalSystem_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "F:/CODE/QtProject/SmallTerm/MedicalSystem/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug",
+		"source" : "F:/CODE/QtProject/SmallTerm/MedicalSystem"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

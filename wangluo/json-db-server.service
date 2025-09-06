@@ -1,0 +1,28 @@
+[Unit]
+Description=JSON Database Server
+After=network.target
+
+[Service]
+Type=forking
+User=medical
+Group=medical
+WorkingDirectory=/Users/baoma.xie/Desktop/myfile/wangluo
+ExecStart=/usr/bin/python3 /Users/baoma.xie/Desktop/myfile/wangluo/integrated_server.py start --daemon
+ExecStop=/usr/bin/python3 /Users/baoma.xie/Desktop/myfile/wangluo/integrated_server.py stop
+ExecReload=/usr/bin/python3 /Users/baoma.xie/Desktop/myfile/wangluo/integrated_server.py restart
+PIDFile=/medical/server.pid
+Restart=always
+RestartSec=10
+
+# 安全设置
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/medical
+
+# 环境变量
+Environment=PYTHONPATH=/Users/baoma.xie/Desktop/myfile/wangluo
+
+[Install]
+WantedBy=multi-user.target

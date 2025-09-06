@@ -1,0 +1,27 @@
+{
+	"BUILD_DIR" : "F:/CODE/QtProject/SmallTerm/MedicalSystem/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/MedicalSystem_autogen",
+	"CMAKE_BINARY_DIR" : "F:/CODE/QtProject/SmallTerm/MedicalSystem/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "F:/CODE/QtProject/SmallTerm/MedicalSystem/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "F:/CODE/QtProject/SmallTerm/MedicalSystem",
+	"CMAKE_SOURCE_DIR" : "F:/CODE/QtProject/SmallTerm/MedicalSystem",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "Ninja",
+	"INCLUDE_DIR" : "F:/CODE/QtProject/SmallTerm/MedicalSystem/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/MedicalSystem_autogen/include",
+	"INPUTS" : 
+	[
+		"F:/CODE/QtProject/SmallTerm/MedicalSystem/fonts/ZiKuTangHuangZiYuanKaiTi-TiYanBan-1.ttf",
+		"F:/CODE/QtProject/SmallTerm/MedicalSystem/fonts/\u5e9e\u95e8\u6b63\u9053\u7c97\u4e66\u4f53.ttf",
+		"F:/CODE/QtProject/SmallTerm/MedicalSystem/fonts/Regattia-Bold.otf"
+	],
+	"LOCK_FILE" : "F:/CODE/QtProject/SmallTerm/MedicalSystem/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CMakeFiles/MedicalSystem_autogen.dir/AutoRcc_resources_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "--no-zstd", "-name", "resources" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_resources.cpp",
+	"RCC_EXECUTABLE" : "F:/TOOLS/QT/6.9.1/mingw_64/bin/rcc.exe",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "F:/CODE/QtProject/SmallTerm/MedicalSystem/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CMakeFiles/MedicalSystem_autogen.dir/AutoRcc_resources_EWIEGA46WW_Used.txt",
+	"SOURCE" : "F:/CODE/QtProject/SmallTerm/MedicalSystem/resources.qrc",
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}
